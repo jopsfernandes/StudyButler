@@ -1,0 +1,1 @@
+- [] fazer teste integrando o componente apenas ao invés da rota e mandar buildar (./src/main.tsx)
