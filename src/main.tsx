@@ -3,11 +3,13 @@ import ReactDOM from 'react-dom/client'
 import Dashboard from './Dashboard.tsx'
 import './global.css'
 import { SignIn } from './screens/signin.tsx'
-import Routes from './Routes.tsx'
+import { RouterProvider } from 'react-router-dom'
+import {router} from './routes.tsx'
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <SignIn/>
+    <RouterProvider router={router}/>
+    
   </React.StrictMode>,
 )
 
