@@ -1,6 +1,5 @@
 import {createBrowserRouter} from 'react-router-dom'
-import * as React from 'react'
-import { SignIn } from './screens/signin';
+import { SignIn } from './screens/signin.tsx';
 
 
 export const router = createBrowserRouter(

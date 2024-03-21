@@ -19,6 +19,7 @@
     ]
   },
   "win": {
+    "icon": "./public/studybutler.ico",
     "target": [
       {
         "target": "nsis",
