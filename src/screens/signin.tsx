@@ -6,7 +6,7 @@ import { ModeToggle } from "@/components/ui/mode-toggle";
 import { Separator } from "@/components/ui/separator";
 import { ThemeProvider } from "@/components/ui/theme-provider";
 import { useEffect } from "react";
-import { Navigate, useNavigate, useNavigation, redirect } from "react-router";
+import { Navigate } from "react-router-dom";
 
 
 
@@ -15,7 +15,7 @@ export function SignIn(){
 
      function handleSubmit(event:React.FormEvent<HTMLElement>) {
           event.preventDefault();
-          <Navigate to= "dashboard" replace={true}/>}
+          <Navigate to= "/dashboard" replace={false}/>}
 
      return (
           <ThemeProvider defaultTheme="dark" storageKey="vite-
@@ -38,7 +38,7 @@ export function SignIn(){
                          </CardHeader>
 
                          <CardContent>
-                              <form onSubmit={handleSubmit}>
+                              <form onSubmit={handleSubmit} method="POST">
                               <div className="space-y-2" >
                                    <Label htmlFor="email">E-mail</Label>
                                    <Input id="email" placeholder="exemplo@email.com" type="email"/>
