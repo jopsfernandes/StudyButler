@@ -1,5 +1,5 @@
 import { Button } from '../components/ui/button'
-import './global.css'
+import '../global.css'
 import { Input } from '../components/ui/input'
 import { Label } from '../components/ui/label'
 import { Dialog, DialogContent, DialogTrigger, DialogHeader, DialogFooter} from '../components/ui/dialog'
@@ -7,7 +7,7 @@ import { Search, PlusCircle,CircleCheck } from 'lucide-react'
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '../components/ui/table'
 import { DialogClose, DialogDescription, DialogTitle } from '@radix-ui/react-dialog'
 import { ThemeProvider } from '../components/ui/theme-provider'
-function Dashboard() {
+export function Dashboard() {
   
 
   return (
@@ -101,4 +101,4 @@ function Dashboard() {
   )
 }
 
-export default Dashboard
+

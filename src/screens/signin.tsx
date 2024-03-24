@@ -5,13 +5,23 @@ import { Label } from "@/components/ui/label";
 import { ModeToggle } from "@/components/ui/mode-toggle";
 import { Separator } from "@/components/ui/separator";
 import { ThemeProvider } from "@/components/ui/theme-provider";
+import { useEffect } from "react";
+import { Navigate, useNavigate, useNavigation, redirect } from "react-router";
 
 
 
 
 export function SignIn(){
+
+     function handleSubmit(event:React.FormEvent<HTMLElement>) {
+          event.preventDefault();
+          <Navigate to= "dashboard" replace={true}/>}
+
      return (
-          <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+          <ThemeProvider defaultTheme="dark" storageKey="vite-
+          ui-theme">
+
+   
                 <main className="h-screen flex w-full bg">
                 <div className="bg-foreground w-full h-full flex p-16 bg-zinc-200 dark:bg-zinc-800">
               
@@ -28,7 +38,8 @@ export function SignIn(){
                          </CardHeader>
 
                          <CardContent>
-                              <div className="space-y-2">
+                              <form onSubmit={handleSubmit}>
+                              <div className="space-y-2" >
                                    <Label htmlFor="email">E-mail</Label>
                                    <Input id="email" placeholder="exemplo@email.com" type="email"/>
                               </div>
@@ -37,8 +48,10 @@ export function SignIn(){
                                    <Input id="password" placeholder="Sua senha secreta" type="password"/>
                               </div> 
 
-                              <Button className="mt-6 w-full dark:accent-lime-500" >Entrar</Button>
+                              <Button type="submit"  className="mt-6 w-full dark:accent-lime-500" >Entrar</Button>
 
+                              </form>
+                            
                               <div className="flex items-center gap-3 mt-3">
                                    <Separator/>
                                    <span> OU</span>
