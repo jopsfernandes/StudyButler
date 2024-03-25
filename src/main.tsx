@@ -8,4 +8,3 @@ ReactDOM.createRoot(document.getElementById('SignIn') as HTMLElement).render(
     <RouterProvider router={router}/>
 )
 
-postMessage({ payload: 'removeLoading' }, '*')

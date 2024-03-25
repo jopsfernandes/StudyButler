@@ -6,16 +6,13 @@ import { ModeToggle } from "@/components/ui/mode-toggle";
 import { Separator } from "@/components/ui/separator";
 import { ThemeProvider } from "@/components/ui/theme-provider";
 import { useEffect } from "react";
-import { Navigate } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 
 
 
 
 export function SignIn(){
 
-     function handleSubmit(event:React.FormEvent<HTMLElement>) {
-          event.preventDefault();
-          <Navigate to= "/dashboard" replace={false}/>}
 
      return (
           <ThemeProvider defaultTheme="dark" storageKey="vite-
@@ -38,7 +35,7 @@ export function SignIn(){
                          </CardHeader>
 
                          <CardContent>
-                              <form onSubmit={handleSubmit} method="POST">
+                              <form>
                               <div className="space-y-2" >
                                    <Label htmlFor="email">E-mail</Label>
                                    <Input id="email" placeholder="exemplo@email.com" type="email"/>
@@ -48,9 +45,12 @@ export function SignIn(){
                                    <Input id="password" placeholder="Sua senha secreta" type="password"/>
                               </div> 
 
-                              <Button type="submit"  className="mt-6 w-full dark:accent-lime-500" >Entrar</Button>
+                             
 
                               </form>
+                              <Button  className="mt-6 w-full " >
+                                   <Link to ="/dashboard">Entrar</Link>
+                                   </Button>
                             
                               <div className="flex items-center gap-3 mt-3">
                                    <Separator/>
@@ -58,7 +58,11 @@ export function SignIn(){
                                    <Separator/>
                               </div>
                               <div className="space-y-2 flex gap-2">
-                              <Button variant="outline" className="mt-3 w-full"  >Entrar com o Google</Button>
+                              <Button variant="outline" className="mt-3 w-full"  >
+                                   <Link to={"/dashboard"} replace={false}>Entrar com o Google</Link>
+                                   
+                                   </Button>
+                              
                               <ModeToggle></ModeToggle>
                               </div>
                               
@@ -66,7 +70,9 @@ export function SignIn(){
                     </Card>
                </section>
                </main>
-          
+
+              
+               <Outlet/>
                
           </ThemeProvider>
          

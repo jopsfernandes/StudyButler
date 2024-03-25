@@ -12,13 +12,14 @@ export function Dashboard() {
 
   return (
     
-    <ThemeProvider defaultTheme='light' >
-    <div className='p-6 max-w-4xl mx-auto space-y-4'>
+    <ThemeProvider defaultTheme='light' storageKey='vite-ui-theme' >
+      <div className='h-screen w-screen dark:bg-zinc-900'>
+      <div className='p-6 max-w-4xl mx-auto space-y-4 dark:bg-zinc-900'>
       
       <div className='flex items-center justify-between'>
       <form className='flex items-center gap-2'>
           
-          <Input name='id' placeholder='Nome da Matéria' className='w-auto'></Input>
+          <Input name='id' placeholder='Nome da Matéria' className='w-auto dark:text-white'></Input>
   
           <Button type='submit' variant='secondary'>
              <Search className='w-4 h-4 mr-3'></Search>
@@ -30,13 +31,13 @@ export function Dashboard() {
   
           <Dialog>
             <DialogTrigger>
-            <Button> 
+            <Button className='dark:bg-zinc-800 dark:text-white dark:hover:bg-zinc-600'> 
             <PlusCircle className='w-4 h-4 mr-3'></PlusCircle>
               Nova Matéria
               </Button>
             </DialogTrigger>
   
-            <DialogContent>
+            <DialogContent className='dark:text-white'>
                <DialogHeader className=''>
                 <DialogTitle><h1>Nova matéria</h1></DialogTitle>
                 <DialogDescription>Criar uma nova matéria no sistema</DialogDescription>
@@ -79,7 +80,7 @@ export function Dashboard() {
           <TableBody>
             {Array.from({length:10}).map((_, i) =>{
               return(
-                <TableRow key = {i}>
+                <TableRow className='dark:text-white' key = {i}>
                   
                   <TableCell>Matéria {i}</TableCell>
                   <TableCell className='whitespace-normal'>  <CircleCheck color='green' strokeWidth={3} className='w-6 h-6 mr-5 ml-4'/> </TableCell>
@@ -93,6 +94,8 @@ export function Dashboard() {
         
         </div>
       </div>
+      </div>
+    
 
     </ThemeProvider>
    
