@@ -9,11 +9,18 @@ import { Outlet } from 'react-router-dom';
 export const router = createHashRouter(
     createRoutesFromElements(
      <>
-     <Route path="/"  element={<SignIn/>}>
-        
-     <Route path="/dashboard" element={<Dashboard/>}/>
-     
+     <Route  path="/" element={<SignIn/>}>
      </Route>
+
+     <Route path="/dashboard" element={<Dashboard/>}>
+     </Route>
+
+  
+     
+        
+     
+     
+     
         
      </>
      

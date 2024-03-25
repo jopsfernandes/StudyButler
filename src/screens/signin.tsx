@@ -6,13 +6,20 @@ import { ModeToggle } from "@/components/ui/mode-toggle";
 import { Separator } from "@/components/ui/separator";
 import { ThemeProvider } from "@/components/ui/theme-provider";
 import { useEffect } from "react";
-import { Link, Outlet } from "react-router-dom";
+import { Link, Navigate, Outlet, useNavigate } from "react-router-dom";
+import { Dashboard } from "./Dashboard";
+import React, {useState} from 'react'
 
 
 
 
 export function SignIn(){
 
+  
+
+     const handleSubmit = (e) =>{
+          event?.preventDefault
+     }
 
      return (
           <ThemeProvider defaultTheme="dark" storageKey="vite-
@@ -45,12 +52,13 @@ export function SignIn(){
                                    <Input id="password" placeholder="Sua senha secreta" type="password"/>
                               </div> 
 
-                             
+                              
+                              <Button type="submit"className="mt-6 w-full "  >Entrar</Button>
+                                   
+                                   
 
                               </form>
-                              <Button  className="mt-6 w-full " >
-                                   <Link to ="/dashboard">Entrar</Link>
-                                   </Button>
+                              
                             
                               <div className="flex items-center gap-3 mt-3">
                                    <Separator/>
@@ -58,10 +66,13 @@ export function SignIn(){
                                    <Separator/>
                               </div>
                               <div className="space-y-2 flex gap-2">
-                              <Button variant="outline" className="mt-3 w-full"  >
-                                   <Link to={"/dashboard"} replace={false}>Entrar com o Google</Link>
-                                   
-                                   </Button>
+
+                                   <Link to={"/dashboard"}>
+                                        <Button variant="outline" className="mt-3 w-full"  >
+                                    Entrar
+                                  
+                                   </Button></Link>
+                              
                               
                               <ModeToggle></ModeToggle>
                               </div>
@@ -72,7 +83,7 @@ export function SignIn(){
                </main>
 
               
-               <Outlet/>
+               
                
           </ThemeProvider>
          
