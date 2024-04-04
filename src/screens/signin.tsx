@@ -17,9 +17,6 @@ export function SignIn(){
 
   
 
-     const handleSubmit = (e) =>{
-          event?.preventDefault
-     }
 
      return (
           <ThemeProvider defaultTheme="dark" storageKey="vite-
@@ -31,7 +28,7 @@ export function SignIn(){
               
               </div>
               <section className="flex items-center justify-center bg-background dark:bg-zinc-900 h-full max-w-3xl w-full p-4">
-                    <Card className="">
+                    <Card >
                          <CardHeader>
                               <CardTitle className="text-2xl font-bold tracking-tighter">
                                    Entre com a sua conta
@@ -67,7 +64,7 @@ export function SignIn(){
                               </div>
                               <div className="space-y-2 flex gap-2">
 
-                                   <Link to={"/dashboard"}>
+                                   <Link to={"/user-dashboard"}>
                                         <Button variant="outline" className="mt-3 w-full"  >
                                     Entrar
                                   
