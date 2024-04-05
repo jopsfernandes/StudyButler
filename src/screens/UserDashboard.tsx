@@ -10,6 +10,9 @@ import {
   Search,
   ShoppingCart,
   Users,
+  Backpack,
+  ScanText,
+  Calendar
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -31,16 +34,20 @@ import {
 import { Input } from "@/components/ui/input";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { NavSidebar } from "@/components/study-butler-components/nav-sidebar.tsx";
-
+import { ModeToggle } from '@/components/ui/mode-toggle';
+import { ThemeProvider } from '@/components/ui/theme-provider';
+import { Dialog, DialogContent, DialogTrigger, DialogHeader,DialogTitle, DialogFooter, DialogDescription,DialogClose } from '../components/ui/dialog'
+import { Label } from '@/components/ui/label';
 export function UserDashboard() {
   return (
-    <div className="grid min-h-screen w-full md:grid-cols-[220px_1fr] lg:grid-cols-[280px_1fr] bg-zinc-200 dark:bg-zinc-900 dark:text-zinc-300 ">
+    <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+      <div className="grid min-h-screen w-full md:grid-cols-[220px_1fr] lg:grid-cols-[280px_1fr] bg-zinc-200 dark:bg-zinc-900 dark:text-zinc-300 ">
       <div className="hidden border-r border-zinc-600 bg-muted md:block">
         <div className="flex h-full max-h-screen flex-col gap-2">
           <div className="flex h-14 items-center border-b border-zinc-600 px-4 lg:h-[60px] lg:px-6">
             <Link to="/" className="flex items-center gap-2 font-semibold">
               <Package2 className="h-6 w-6" />
-              <span >Acme Inc</span>
+              <span >StudyButler</span>
             </Link>
             <Button variant="outline" size="icon" className="ml-auto h-8 w-8">
               <Bell className="h-4 w-4" />
@@ -50,45 +57,44 @@ export function UserDashboard() {
           <div className="flex-1">
      <nav className="grid items-start px-2 text-sm font-medium lg:px-4">
        <Link to="/dashboard"  className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary dark:hover:bg-zinc-800">
-         <Home className="h-4 w-4" />
+         <Home className="h-5 w-5" />
          Dashboard
        </Link>
        <Link to="/orders" className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary dark:hover:bg-zinc-800">
-         <ShoppingCart className="h-4 w-4 " />
-         Orders
+         <Backpack className="h-5 w-5 " />
+         Minha Mochila
          <Badge className="ml-auto flex h-6 w-6 shrink-0 items-center justify-center rounded-full">
            6
          </Badge>
        </Link>
        <Link to="/products" className="flex items-center gap-3 rounded-lg bg-muted px-3 py-2 text-primary transition-all hover:text-primary dark:hover:bg-zinc-800">
-         <Package className="h-4 w-4" />
-         Products{" "}
+         <ScanText className="h-5 w-5" />
+         Escanear Provas{" "}
        </Link>
        <Link to="/customers" className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary dark:hover:bg-zinc-800">
-         <Users className="h-4 w-4" />
-         Customers
+         <Calendar className="h-5 w-5" />
+         Calendário de Revisões
        </Link>
        <Link
          to="/analytics"
          className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary dark:hover:bg-zinc-800"
        >
-         <LineChart className="h-4 w-4" />
-         Analytics
+         <LineChart className="h-5 w-5" />
+         Progresso Acadêmico
        </Link>
      </nav>
    </div>
           <div className="mt-auto p-4">
             <Card>
               <CardHeader className="p-2 pt-0 md:p-4">
-                <CardTitle>Upgrade to Pro</CardTitle>
+                <CardTitle>Mude para o StudyButler PRO</CardTitle>
                 <CardDescription>
-                  Unlock all features and get unlimited access to our support
-                  team.
+                  Desbloqueie todo o seu potencial acadêmico
                 </CardDescription>
               </CardHeader>
               <CardContent className="p-2 pt-0 md:p-4 md:pt-0">
                 <Button size="sm" className="w-full">
-                  Upgrade
+                  Assinar
                 </Button>
               </CardContent>
             </Card>
@@ -186,6 +192,8 @@ export function UserDashboard() {
               </div>
             </form>
           </div>
+
+          <ModeToggle></ModeToggle>
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button variant="secondary" size="icon" className="rounded-full">
@@ -194,32 +202,66 @@ export function UserDashboard() {
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent className="bg-white dark:bg-zinc-900 dark:text-white" align="end">
-              <DropdownMenuLabel>My Account</DropdownMenuLabel>
+              <DropdownMenuLabel>Minha Conta</DropdownMenuLabel>
               <DropdownMenuSeparator />
-              <DropdownMenuItem className="cursor-pointer dark:hover:bg-zinc-800">Settings</DropdownMenuItem>
-              <DropdownMenuItem className="cursor-pointer dark:hover:bg-zinc-800">Support</DropdownMenuItem>
+              <DropdownMenuItem className="cursor-pointer dark:hover:bg-zinc-800">Configurações</DropdownMenuItem>
+              <DropdownMenuItem className="cursor-pointer dark:hover:bg-zinc-800">Suporte</DropdownMenuItem>
               <DropdownMenuSeparator />
-              <DropdownMenuItem className="cursor-pointer dark:hover:bg-zinc-800">Logout</DropdownMenuItem>
+              <DropdownMenuItem className="cursor-pointer dark:hover:bg-zinc-800">Sair</DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
         </header>
         <main className="flex flex-1 flex-col gap-4 p-4 lg:gap-6 lg:p-6 dark:bg-zinc-950">
           <div className="flex items-center">
-            <h1 className="text-lg font-semibold md:text-2xl">Inventory</h1>
+            <h1 className="text-lg font-semibold md:text-2xl">Cadernos</h1>
           </div>
           <div className="flex flex-1 items-center justify-center rounded-lg border border-dashed border-zinc-600 shadow-sm">
             <div className="flex flex-col items-center gap-1 text-center">
               <h3 className="text-2xl font-bold tracking-tight">
-                You have no products
+                Você ainda não tem nenhum caderno em sua Mochila
               </h3>
               <p className="text-sm text-muted-foreground">
-                You can start selling as soon as you add a product.
+                Aperte no botão para criar um agora mesmo!!!
               </p>
-              <Button className="mt-4">Add Product</Button>
+
+              <Dialog>
+                <DialogTrigger asChild>
+                <Button className="mt-4">Criar novo caderno</Button>
+                </DialogTrigger>
+                <DialogContent>
+                  <DialogHeader className='mb-3'>
+                    <DialogTitle className='dark:text-zinc-300'>
+                     Criação de caderno
+                    </DialogTitle>
+                    <DialogDescription>preencha os campos para criar seu caderno.</DialogDescription>
+                  </DialogHeader>
+                  <form action="" className='space-y-4'>
+                    <div className='grid grid-cols-4 items-center text-right gap-4'>
+                      <Label className='dark:text-zinc-200' htmlFor='subject-name'>Nome</Label>
+                      <Input className='col-span-3 dark:text-zinc-200' id="subject-name"></Input>
+                    </div>
+                    <div className='grid grid-cols-4 items-center text-right gap-4'>
+                      <Label className='dark:text-zinc-200' htmlFor='subject-name'>Dificuldade</Label>
+                      <Input className='col-span-3 dark:text-zinc-200' id="subject-name"></Input>
+                    </div>
+                    <div className='grid grid-cols-4 items-center text-right gap-4'>
+                      <Label className='dark:text-zinc-200' htmlFor='subject-name'>Matéria</Label>
+                      <Input className='col-span-3 dark:text-zinc-200' id="subject-name"></Input>
+                    </div>
+                    <DialogFooter className="">
+                      <DialogClose asChild><Button className="dark:text-zinc-200" variant={'outline'}>Cancelar</Button></DialogClose>
+                      <Button>Criar Caderno</Button>
+                    </DialogFooter>
+                  </form>
+                </DialogContent>
+              </Dialog>
+
             </div>
           </div>
         </main>
       </div>
     </div>
+    </ThemeProvider>
+    
   );
 }
