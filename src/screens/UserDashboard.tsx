@@ -41,10 +41,10 @@ import { Label } from '@/components/ui/label';
 export function UserDashboard() {
   return (
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
-      <div className="grid min-h-screen w-full md:grid-cols-[220px_1fr] lg:grid-cols-[280px_1fr] bg-zinc-200 dark:bg-zinc-900 dark:text-zinc-300 ">
-      <div className="hidden border-r border-zinc-600 bg-muted md:block">
+      <div className="grid min-h-screen w-full md:grid-cols-[220px_1fr] lg:grid-cols-[280px_1fr] bg-zinc-100 dark:bg-zinc-900 dark:text-zinc-300 ">
+      <div className="hidden border-r dark:border-zinc-800 bg-muted md:block">
         <div className="flex h-full max-h-screen flex-col gap-2">
-          <div className="flex h-14 items-center border-b border-zinc-600 px-4 lg:h-[60px] lg:px-6">
+          <div className="flex h-14 items-center border-b dark:border-zinc-800 px-4 lg:h-[60px] lg:px-6">
             <Link to="/" className="flex items-center gap-2 font-semibold">
               <Package2 className="h-6 w-6" />
               <span >StudyButler</span>
@@ -102,7 +102,7 @@ export function UserDashboard() {
         </div>
       </div>
       <div className="flex flex-col">
-        <header className="flex h-14 items-center gap-4 border-b border-zinc-600 bg-muted/40 px-4 lg:h-[60px] lg:px-6">
+        <header className="flex h-14 items-center gap-4 border-b dark:border-zinc-800 bg-muted/40 px-4 lg:h-[60px] lg:px-6">
           <Sheet>
             <SheetTrigger asChild>
               <Button
@@ -165,15 +165,14 @@ export function UserDashboard() {
               <div className="mt-auto">
                 <Card>
                   <CardHeader>
-                    <CardTitle>Upgrade to Pro</CardTitle>
+                    <CardTitle>Venha ser Premium</CardTitle>
                     <CardDescription>
-                      Unlock all features and get unlimited access to our
-                      support team.
+                      Desbloqueie todo o seu potencial acadêmico com a nossa coletânea de funcionalidades exclusivas
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
                     <Button size="sm" className="w-full">
-                      Upgrade
+                      Quero ser Premium
                     </Button>
                   </CardContent>
                 </Card>
@@ -215,7 +214,7 @@ export function UserDashboard() {
           <div className="flex items-center">
             <h1 className="text-lg font-semibold md:text-2xl">Cadernos</h1>
           </div>
-          <div className="flex flex-1 items-center justify-center rounded-lg border border-dashed border-zinc-600 shadow-sm">
+          <div className="flex flex-1 items-center justify-center rounded-lg border border-dashed dark:border-zinc-900 shadow-sm">
             <div className="flex flex-col items-center gap-1 text-center">
               <h3 className="text-2xl font-bold tracking-tight">
                 Você ainda não tem nenhum caderno em sua Mochila
