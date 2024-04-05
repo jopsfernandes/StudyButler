@@ -9,14 +9,14 @@ import { UserDashboard } from './screens/UserDashboard.tsx';
 export const router = createHashRouter(
     createRoutesFromElements(
         <>
-            <Route path="/" element={<SignIn />}>
-            </Route>
+            <Route path="/" exact element={<SignIn />}/>
+            
 
-            <Route path="/dashboard" element={<Dashboard />}>
-            </Route>
+            <Route path="/dashboard" element={<Dashboard />}/>
+            
 
-            <Route path="/user-dashboard" element={<UserDashboard />}>
-            </Route>
+            <Route path="/user-dashboard" element={<UserDashboard />}/>
+            
 
         </>
 

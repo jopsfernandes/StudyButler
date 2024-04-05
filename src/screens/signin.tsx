@@ -6,7 +6,7 @@ import { ModeToggle } from "@/components/ui/mode-toggle";
 import { Separator } from "@/components/ui/separator";
 import { ThemeProvider } from "@/components/ui/theme-provider";
 import { useEffect } from "react";
-import { Link, Navigate, Outlet, useNavigate } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { Dashboard } from "./Dashboard";
 import React, {useState} from 'react'
 
@@ -62,7 +62,7 @@ export function SignIn(){
                                    <span> OU</span>
                                    <Separator/>
                               </div>
-                              <div className="space-y-2 flex gap-2">
+                              <div className="space-y-3 flex gap-2">
 
                                    <Link to={"/user-dashboard"}>
                                         <Button variant="outline" className="mt-3 w-full"  >

@@ -30,6 +30,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Input } from "@/components/ui/input";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { NavSidebar } from "@/components/study-butler-components/nav-sidebar.tsx";
 
 export function UserDashboard() {
   return (
@@ -39,7 +40,7 @@ export function UserDashboard() {
           <div className="flex h-14 items-center border-b border-zinc-600 px-4 lg:h-[60px] lg:px-6">
             <Link to="/" className="flex items-center gap-2 font-semibold">
               <Package2 className="h-6 w-6" />
-              <span className="">Acme Inc</span>
+              <span >Acme Inc</span>
             </Link>
             <Button variant="outline" size="icon" className="ml-auto h-8 w-8">
               <Bell className="h-4 w-4" />
@@ -47,47 +48,35 @@ export function UserDashboard() {
             </Button>
           </div>
           <div className="flex-1">
-            <nav className="grid items-start px-2 text-sm font-medium lg:px-4">
-              <Link
-                to="/dashboard"
-                className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
-              >
-                <Home className="h-4 w-4" />
-                Dashboard
-              </Link>
-              <Link
-                to="/orders"
-                className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
-              >
-                <ShoppingCart className="h-4 w-4" />
-                Orders
-                <Badge className="ml-auto flex h-6 w-6 shrink-0 items-center justify-center rounded-full">
-                  6
-                </Badge>
-              </Link>
-              <Link
-                to="/products"
-                className="flex items-center gap-3 rounded-lg bg-muted px-3 py-2 text-primary transition-all hover:text-primary"
-              >
-                <Package className="h-4 w-4" />
-                Products{" "}
-              </Link>
-              <Link
-                to="/customers"
-                className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
-              >
-                <Users className="h-4 w-4" />
-                Customers
-              </Link>
-              <Link
-                to="/analytics"
-                className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
-              >
-                <LineChart className="h-4 w-4" />
-                Analytics
-              </Link>
-            </nav>
-          </div>
+     <nav className="grid items-start px-2 text-sm font-medium lg:px-4">
+       <Link to="/dashboard"  className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary dark:hover:bg-zinc-800">
+         <Home className="h-4 w-4" />
+         Dashboard
+       </Link>
+       <Link to="/orders" className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary dark:hover:bg-zinc-800">
+         <ShoppingCart className="h-4 w-4 " />
+         Orders
+         <Badge className="ml-auto flex h-6 w-6 shrink-0 items-center justify-center rounded-full">
+           6
+         </Badge>
+       </Link>
+       <Link to="/products" className="flex items-center gap-3 rounded-lg bg-muted px-3 py-2 text-primary transition-all hover:text-primary dark:hover:bg-zinc-800">
+         <Package className="h-4 w-4" />
+         Products{" "}
+       </Link>
+       <Link to="/customers" className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary dark:hover:bg-zinc-800">
+         <Users className="h-4 w-4" />
+         Customers
+       </Link>
+       <Link
+         to="/analytics"
+         className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary dark:hover:bg-zinc-800"
+       >
+         <LineChart className="h-4 w-4" />
+         Analytics
+       </Link>
+     </nav>
+   </div>
           <div className="mt-auto p-4">
             <Card>
               <CardHeader className="p-2 pt-0 md:p-4">
@@ -119,7 +108,7 @@ export function UserDashboard() {
                 <span className="sr-only">Toggle navigation menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="left" className="flex flex-col">
+            <SheetContent side="left" className="flex flex-col dark:text-zinc-300 dark:border-zinc-600">
               <nav className="grid gap-2 text-lg font-medium">
                 <Link
                   to="/"
@@ -207,10 +196,10 @@ export function UserDashboard() {
             <DropdownMenuContent className="bg-white dark:bg-zinc-900 dark:text-white" align="end">
               <DropdownMenuLabel>My Account</DropdownMenuLabel>
               <DropdownMenuSeparator />
-              <DropdownMenuItem>Settings</DropdownMenuItem>
-              <DropdownMenuItem>Support</DropdownMenuItem>
+              <DropdownMenuItem className="cursor-pointer dark:hover:bg-zinc-800">Settings</DropdownMenuItem>
+              <DropdownMenuItem className="cursor-pointer dark:hover:bg-zinc-800">Support</DropdownMenuItem>
               <DropdownMenuSeparator />
-              <DropdownMenuItem>Logout</DropdownMenuItem>
+              <DropdownMenuItem className="cursor-pointer dark:hover:bg-zinc-800">Logout</DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
         </header>
