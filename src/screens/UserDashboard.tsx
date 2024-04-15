@@ -12,7 +12,9 @@ import {
   Users,
   Backpack,
   ScanText,
-  Calendar
+  Calendar,
+  GraduationCap,
+  LogOut
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -45,8 +47,8 @@ export function UserDashboard() {
       <div className="hidden border-r dark:border-zinc-800 bg-muted md:block">
         <div className="flex h-full max-h-screen flex-col gap-2">
           <div className="flex h-14 items-center border-b dark:border-zinc-800 px-4 lg:h-[60px] lg:px-6">
-            <Link to="/" className="flex items-center gap-2 font-semibold">
-              <Package2 className="h-6 w-6" />
+            <Link to="/" className="flex items-center gap-3 font-semibold">
+              <GraduationCap className="h-6 w-6" />
               <span >StudyButler</span>
             </Link>
             <Button variant="outline" size="icon" className="ml-auto h-8 w-8">
@@ -69,7 +71,7 @@ export function UserDashboard() {
        </Link>
        <Link to="/products" className="flex items-center gap-3 rounded-lg bg-muted px-3 py-2 text-primary transition-all hover:text-primary dark:hover:bg-zinc-800">
          <ScanText className="h-5 w-5" />
-         Escanear Provas{" "}
+         Extrair Questões {" "}
        </Link>
        <Link to="/customers" className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary dark:hover:bg-zinc-800">
          <Calendar className="h-5 w-5" />
@@ -206,7 +208,11 @@ export function UserDashboard() {
               <DropdownMenuItem className="cursor-pointer dark:hover:bg-zinc-800">Configurações</DropdownMenuItem>
               <DropdownMenuItem className="cursor-pointer dark:hover:bg-zinc-800">Suporte</DropdownMenuItem>
               <DropdownMenuSeparator />
-              <DropdownMenuItem className="cursor-pointer dark:hover:bg-zinc-800">Sair</DropdownMenuItem>
+              <DropdownMenuItem className="cursor-pointer dark:hover:bg-zinc-800 gap-2">
+              <LogOut className='h-4 w-4'></LogOut>
+               Logout
+             
+              </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
         </header>
