@@ -205,7 +205,7 @@ export function UserDashboard() {
             <DropdownMenuContent className="bg-white dark:bg-zinc-900 dark:text-white" align="end">
               <DropdownMenuLabel>Minha Conta</DropdownMenuLabel>
               <DropdownMenuSeparator />
-              <DropdownMenuItem className="cursor-pointer dark:hover:bg-zinc-800">Configurações</DropdownMenuItem>
+              <DropdownMenuItem className="cursor-pointer dark:hover:bg-zinc-800"><Link to="/user-settings">Configurações</Link></DropdownMenuItem>
               <DropdownMenuItem className="cursor-pointer dark:hover:bg-zinc-800">Suporte</DropdownMenuItem>
               <DropdownMenuSeparator />
               <DropdownMenuItem className="cursor-pointer dark:hover:bg-zinc-800 gap-2">
