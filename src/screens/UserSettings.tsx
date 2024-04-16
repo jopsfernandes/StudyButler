@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
-import { CircleUser, Menu, Package2, Search } from 'lucide-react';
+import { CircleUser, Menu, Package2, Search, LogOut } from 'lucide-react';
+import { ModeToggle } from '@/components/ui/mode-toggle';
 
 import { Button } from '@/components/ui/button';
 import {
@@ -29,91 +30,27 @@ export function UserSettings() {
           <div className="flex min-h-screen w-full flex-col">
       <header className="sticky top-0 flex h-16 items-center gap-4 border-b bg-background px-4 md:px-6">
         <nav className="hidden flex-col gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6">
-          <Link
-            to="#"
-            className="flex items-center gap-2 text-lg font-semibold md:text-base"
-          >
-            <Package2 className="h-6 w-6" />
-            <span className="sr-only">StudyButler</span>
-          </Link>
-          <Link
-            to="/user-dashboard"
-            className="text-muted-foreground transition-colors hover:text-foreground"
-          >
-            Dashboard
-          </Link>
-          <Link
-            to="#"
-            className="text-muted-foreground transition-colors hover:text-foreground"
-          >
-            Orders
-          </Link>
-          <Link
-            to="#"
-            className="text-muted-foreground transition-colors hover:text-foreground"
-          >
-            Products
-          </Link>
-          <Link
-            to="#"
-            className="text-muted-foreground transition-colors hover:text-foreground"
-          >
-            Customers
-          </Link>
-          <Link
-            to="#"
-            className="text-foreground transition-colors hover:text-foreground"
-          >
-            Settings
-          </Link>
+          <Link to="#"   className="flex items-center gap-2 text-lg font-semibold md:text-base" > <Package2 className="h-6 w-6" /> <span className="sr-only">StudyButler</span></Link>
+          <Link to="/user-dashboard"  className="text-muted-foreground transition-colors hover:text-foreground" > Dashboard </Link>
+          <Link to="#"  className="text-muted-foreground transition-colors hover:text-foreground" >Mochila</Link>
+          <Link to="#"  className="text-muted-foreground transition-colors hover:text-foreground" >Questões</Link>
+          <Link to="#"  className="text-muted-foreground transition-colors hover:text-foreground" >Calendário</Link>
+          <Link to="#" className="text-foreground transition-colors hover:text-foreground" >Progresso</Link>
         </nav>
         <Sheet>
           <SheetTrigger asChild>
-            <Button
-              variant="outline"
-              size="icon"
-              className="shrink-0 md:hidden"
-            >
-              <Menu className="h-5 w-5" />
+            <Button variant="outline" size="icon" className="shrink-0 md:hidden"> <Menu className="h-5 w-5" />
               <span className="sr-only">Toggle navigation menu</span>
             </Button>
           </SheetTrigger>
           <SheetContent side="left">
             <nav className="grid gap-6 text-lg font-medium">
-              <Link
-                to="#"
-                className="flex items-center gap-2 text-lg font-semibold"
-              >
-                <Package2 className="h-6 w-6" />
-                <span className="sr-only">Acme Inc</span>
-              </Link>
-              <Link
-                to="#"
-                className="text-muted-foreground hover:text-foreground"
-              >
-                Dashboard
-              </Link>
-              <Link
-                to="#"
-                className="text-muted-foreground hover:text-foreground"
-              >
-                Orders
-              </Link>
-              <Link
-                to="#"
-                className="text-muted-foreground hover:text-foreground"
-              >
-                Products
-              </Link>
-              <Link
-                to="#"
-                className="text-muted-foreground hover:text-foreground"
-              >
-                Customers
-              </Link>
-              <Link to="#" className="hover:text-foreground">
-                Settings
-              </Link>
+              <Link to="#" className="flex items-center gap-2 text-lg font-semibold" ><Package2 className="h-6 w-6" /><span className="sr-only">StudyButler</span></Link>
+              <Link to="#" className="text-muted-foreground hover:text-foreground" >Dashboard</Link>
+              <Link to="#" className="text-muted-foreground hover:text-foreground" >Minha Mochila</Link>
+              <Link to="#" className="text-muted-foreground hover:text-foreground" >Extrair Questões</Link>
+              <Link to="#" className="text-muted-foreground hover:text-foreground" >Meu Calendário</Link>
+              <Link to="#" className="hover:text-foreground">Progresso Acadêmico</Link>
             </nav>
           </SheetContent>
         </Sheet>
@@ -128,6 +65,7 @@ export function UserSettings() {
               />
             </div>
           </form>
+          <ModeToggle className=""></ModeToggle>
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button variant="secondary" size="icon" className="rounded-full">
@@ -135,31 +73,31 @@ export function UserSettings() {
                 <span className="sr-only">Toggle user menu</span>
               </Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent align="end">
-              <DropdownMenuLabel>My Account</DropdownMenuLabel>
+            <DropdownMenuContent className="bg-white dark:bg-zinc-900 dark:text-white gap-2"align="end">
+              <DropdownMenuLabel>Minha Conta</DropdownMenuLabel>
               <DropdownMenuSeparator />
-              <DropdownMenuItem>Settings</DropdownMenuItem>
-              <DropdownMenuItem>Support</DropdownMenuItem>
+              <DropdownMenuItem>Configurações</DropdownMenuItem>
+              <DropdownMenuItem>Suporte</DropdownMenuItem>
               <DropdownMenuSeparator />
-              <DropdownMenuItem>Logout</DropdownMenuItem>
+              <DropdownMenuItem className='gap-2'><LogOut className='h-4 w-4'></LogOut>Logout</DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
         </div>
       </header>
       <main className="flex min-h-[calc(100vh_-_theme(spacing.16))] flex-1 flex-col gap-4 bg-muted/40 p-4 md:gap-8 md:p-10">
         <div className="mx-auto grid w-full max-w-6xl gap-2">
-          <h1 className="text-3xl font-semibold">Settings</h1>
+          <h1 className="text-3xl font-semibold">Configurações</h1>
         </div>
         <div className="mx-auto grid w-full max-w-6xl items-start gap-6 md:grid-cols-[180px_1fr] lg:grid-cols-[250px_1fr]">
           <nav className="grid gap-4 text-sm text-muted-foreground">
             <Link to="#" className="font-semibold text-primary">
               General
             </Link>
-            <Link to="#">Security</Link>
-            <Link to="#">Integrations</Link>
-            <Link to="#">Support</Link>
-            <Link to="#">Organizations</Link>
-            <Link to="#">Advanced</Link>
+            <Link to="#">Segurança</Link>
+            <Link to="#">Integrações</Link>
+            <Link to="#">Suporte</Link>
+            <Link to="#">Organizacional</Link>
+            <Link to="#">Avançado</Link>
           </nav>
           <div className="grid gap-6">
             <Card>
@@ -169,13 +107,14 @@ export function UserSettings() {
                   Used to identify your store in the marketplace.
                 </CardDescription>
               </CardHeader>
-              <CardContent>
-                <form>
+              <CardContent className=''>
+                <form className='space-y-3'>
+                  <Input placeholder="Store Name" />
                   <Input placeholder="Store Name" />
                 </form>
               </CardContent>
               <CardFooter className="border-t px-6 py-4">
-                <Button>Save</Button>
+                <Button>Salvar</Button>
               </CardFooter>
             </Card>
             <Card>
@@ -204,17 +143,14 @@ export function UserSettings() {
                 </form>
               </CardContent>
               <CardFooter className="border-t px-6 py-4">
-                <Button>Save</Button>
+                <Button>Salvar</Button>
               </CardFooter>
             </Card>
           </div>
         </div>
       </main>
     </div>
-     </ThemeProvider>
-
-     
-    
+     </ThemeProvider> 
   );
 }
 
