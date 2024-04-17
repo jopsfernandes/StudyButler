@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import { CircleUser, Menu, Package2, Search, LogOut } from 'lucide-react';
 import { ModeToggle } from '@/components/ui/mode-toggle';
-
 import { Button } from '@/components/ui/button';
 import {
   Card,

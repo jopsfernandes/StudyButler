@@ -29,6 +29,9 @@ function createWindow() {
     width: 900,
     height: 900,
     autoHideMenuBar: true,
+    center: true,
+    frame: false,
+    titleBarStyle: 'hidden'
   })
  
   win.webContents.openDevTools()
