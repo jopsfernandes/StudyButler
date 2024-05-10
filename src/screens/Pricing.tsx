@@ -24,6 +24,7 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
+  CardFooter,
 } from "@/components/ui/card";
 import {
   DropdownMenu,
@@ -40,7 +41,7 @@ import { ModeToggle } from '@/components/ui/mode-toggle';
 import { ThemeProvider } from '@/components/ui/theme-provider';
 import { Dialog, DialogContent, DialogTrigger, DialogHeader,DialogTitle, DialogFooter, DialogDescription,DialogClose } from '../components/ui/dialog'
 import { Label } from '@/components/ui/label';
-export function UserDashboard() {
+export default function Pricing() {
   return (
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
       <div className="grid min-h-screen w-full md:grid-cols-[220px_1fr] lg:grid-cols-[280px_1fr] bg-zinc-100 dark:bg-zinc-900 dark:text-zinc-300 ">
@@ -86,24 +87,7 @@ export function UserDashboard() {
        </Link>
      </nav>
    </div>
-          <div className="mt-auto p-4">
-            <Card>
-              <CardHeader className="p-2 pt-0 md:p-4">
-                <CardTitle>Mude para o StudyButler PRO</CardTitle>
-                <CardDescription>
-                  Desbloqueie todo o seu potencial acadêmico
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="p-2 pt-0 md:p-4 md:pt-0">
-                <Link to="/pricing">
-                <Button size="sm" className="w-full">
-                  Assinar
-                </Button>
-                </Link>
-              
-              </CardContent>
-            </Card>
-          </div>
+          
         </div>
       </div>
       <div className="flex flex-col">
@@ -220,52 +204,101 @@ export function UserDashboard() {
           </DropdownMenu>
         </header>
         <main className="flex flex-1 flex-col gap-4 p-4 lg:gap-6 lg:p-6 dark:bg-zinc-950">
-          <div className="flex items-center">
-            <h1 className="text-lg font-semibold md:text-2xl">Cadernos</h1>
-          </div>
-          <div className="flex flex-1 items-center justify-center rounded-lg border border-dashed dark:border-zinc-900 shadow-sm">
-            <div className="flex flex-col items-center gap-1 text-center">
-              <h3 className="text-2xl font-bold tracking-tight">
-                Você ainda não tem nenhum caderno em sua Mochila
-              </h3>
-              <p className="text-sm text-muted-foreground">
-                Aperte no botão para criar um agora mesmo!!!
+        <div className="container grid gap-8 px-4 md:px-6">
+            <div className="grid gap-4 text-center">
+              <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">Pricing Plans</h2>
+              <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+                Choose the plan that fits your needs and budget.
               </p>
-
-              <Dialog>
-                <DialogTrigger asChild>
-                <Button className="mt-4">Criar novo caderno</Button>
-                </DialogTrigger>
-                <DialogContent>
-                  <DialogHeader className='mb-3'>
-                    <DialogTitle className='dark:text-zinc-300'>
-                     Criação de caderno
-                    </DialogTitle>
-                    <DialogDescription>preencha os campos para criar seu caderno.</DialogDescription>
-                  </DialogHeader>
-                  <form action="" className='space-y-4'>
-                    <div className='grid grid-cols-4 items-center text-right gap-4'>
-                      <Label className='dark:text-zinc-200' htmlFor='subject-name'>Nome</Label>
-                      <Input className='col-span-3 dark:text-zinc-200' id="subject-name"></Input>
+            </div>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              <Card className="p-6 grid gap-6">
+                <CardHeader>
+                  <CardTitle>Starter</CardTitle>
+                  <CardDescription>
+                    <div className="flex items-baseline gap-2">
+                      <span className="text-4xl font-bold">$9</span>
+                      <span className="text-gray-500 dark:text-gray-400">/month</span>
                     </div>
-                    <div className='grid grid-cols-4 items-center text-right gap-4'>
-                      <Label className='dark:text-zinc-200' htmlFor='subject-name'>Dificuldade</Label>
-                      <Input className='col-span-3 dark:text-zinc-200' id="subject-name"></Input>
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="grid gap-4">
+                  <div className="flex items-center gap-2">
+                    <span>1 user</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span>5 GB storage</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span>Basic features</span>
+                  </div>
+                </CardContent>
+                <CardFooter className="flex items-center gap-2">
+                  <Button className="flex-1" variant="default">
+                    Get Started
+                  </Button>
+                  
+                </CardFooter>
+              </Card>
+              <Card className="p-6 grid gap-6">
+                <CardHeader>
+                  <CardTitle>Pro</CardTitle>
+                  <CardDescription>
+                    <div className="flex items-baseline gap-2">
+                      <span className="text-4xl font-bold">$19</span>
+                      <span className="text-gray-500 dark:text-gray-400">/month</span>
                     </div>
-                    <div className='grid grid-cols-4 items-center text-right gap-4'>
-                      <Label className='dark:text-zinc-200' htmlFor='subject-name'>Matéria</Label>
-                      <Input className='col-span-3 dark:text-zinc-200' id="subject-name"></Input>
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="grid gap-4">
+                  <div className="flex items-center gap-2">
+                    <span>5 users</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span>50 GB storage</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span>Advanced features</span>
+                  </div>
+                </CardContent>
+                <CardFooter className="flex items-center gap-2">
+                  <Button className="flex-1" variant="default">
+                    Get Started
+                  </Button>
+                  
+                </CardFooter>
+              </Card>
+              <Card className="p-6 grid gap-6">
+                <CardHeader>
+                  <CardTitle>Enterprise</CardTitle>
+                  <CardDescription>
+                    <div className="flex items-baseline gap-2">
+                      <span className="text-4xl font-bold">$49</span>
+                      <span className="text-gray-500 dark:text-gray-400">/month</span>
                     </div>
-                    <DialogFooter className="">
-                      <DialogClose asChild><Button className="dark:text-zinc-200" variant={'outline'}>Cancelar</Button></DialogClose>
-                      <Button>Criar Caderno</Button>
-                    </DialogFooter>
-                  </form>
-                </DialogContent>
-              </Dialog>
-
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="grid gap-4">
+                  <div className="flex items-center gap-2">
+                    <span>Unlimited users</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span>Unlimited storage</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span>Enterprise features</span>
+                  </div>
+                </CardContent>
+                <CardFooter className="flex items-center gap-2">
+                  <Button className="flex-1" variant="default">
+                    Get Started
+                  </Button>
+                 
+                </CardFooter>
+              </Card>
             </div>
           </div>
+
         </main>
       </div>
     </div>

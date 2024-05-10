@@ -64,7 +64,7 @@ export function UserSettings() {
               />
             </div>
           </form>
-          <ModeToggle className=""></ModeToggle>
+          <ModeToggle></ModeToggle>
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button variant="secondary" size="icon" className="rounded-full">

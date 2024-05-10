@@ -10,10 +10,12 @@ import { DraggableTopBar } from './components/study-butler-components/DraggableT
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     <>
     <DraggableTopBar/>
-    <React.StrictMode>
+    <ThemeProvider defaultTheme='system' storageKey='vite-ui-theme'><React.StrictMode>
     <RouterProvider router={router}/>
     </React.StrictMode>
+    </ThemeProvider>
     </>
+    
     
     
 )
