@@ -14,7 +14,8 @@ import {
   ScanText,
   Calendar,
   GraduationCap,
-  LogOut
+  LogOut,
+  Check,
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -44,7 +45,7 @@ import { Label } from '@/components/ui/label';
 export default function Pricing() {
   return (
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
-      <div className="grid min-h-screen w-full md:grid-cols-[220px_1fr] lg:grid-cols-[280px_1fr] bg-zinc-100 dark:bg-zinc-900 dark:text-zinc-300 ">
+      <div className="grid min-h-screen w-full md:grid-cols-[220px_1fr] lg:grid-cols-[280px_1fr] bg-primary dark:bg-zinc-900 dark:text-zinc-300 ">
       <div className="hidden border-r dark:border-zinc-800 bg-muted md:block">
         <div className="flex h-full max-h-screen flex-col gap-2">
           <div className="flex h-14 items-center border-b dark:border-zinc-800 px-4 lg:h-[60px] lg:px-6">
@@ -63,7 +64,7 @@ export default function Pricing() {
          <Home className="h-5 w-5" />
          Dashboard
        </Link>
-       <Link to="/orders" className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary dark:hover:bg-zinc-800">
+       <Link to="/user-dashboard" className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary dark:hover:bg-zinc-800">
          <Backpack className="h-5 w-5 " />
          Minha Mochila
          <Badge className="ml-auto flex h-6 w-6 shrink-0 items-center justify-center rounded-full">
@@ -151,21 +152,7 @@ export default function Pricing() {
                   Analytics
                 </Link>
               </nav>
-              <div className="mt-auto">
-                <Card>
-                  <CardHeader>
-                    <CardTitle>Venha ser Premium</CardTitle>
-                    <CardDescription>
-                      Desbloqueie todo o seu potencial acadêmico com a nossa coletânea de funcionalidades exclusivas
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <Button size="sm" className="w-full">
-                      Quero ser Premium
-                    </Button>
-                  </CardContent>
-                </Card>
-              </div>
+              
             </SheetContent>
           </Sheet>
           <div className="w-full flex-1">
@@ -203,18 +190,18 @@ export default function Pricing() {
             </DropdownMenuContent>
           </DropdownMenu>
         </header>
-        <main className="flex flex-1 flex-col gap-4 p-4 lg:gap-6 lg:p-6 dark:bg-zinc-950">
+        <main className="flex flex-1 flex-col gap-4 p-4 lg:gap-6 lg:p-6 dark:bg-zinc-920">
         <div className="container grid gap-8 px-4 md:px-6">
-            <div className="grid gap-4 text-center">
-              <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">Pricing Plans</h2>
-              <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-                Choose the plan that fits your needs and budget.
+            <div className="grid gap-4 text-center justify-center">
+              <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">Planos que cabem no seu bolso!</h2>
+              <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-zinc-400">
+                Temos os melhores planos para atender todas as suas necessidades!
               </p>
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
               <Card className="p-6 grid gap-6">
                 <CardHeader>
-                  <CardTitle>Starter</CardTitle>
+                  <CardTitle>Estudantes</CardTitle>
                   <CardDescription>
                     <div className="flex items-baseline gap-2">
                       <span className="text-4xl font-bold">$9</span>
@@ -224,12 +211,15 @@ export default function Pricing() {
                 </CardHeader>
                 <CardContent className="grid gap-4">
                   <div className="flex items-center gap-2">
-                    <span>1 user</span>
+                    <Check/>
+                    <span>Extração de questões</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <span>5 GB storage</span>
+                  <Check/>
+                    <span>Revisões Estratégicas</span>
                   </div>
                   <div className="flex items-center gap-2">
+                  <Check/>
                     <span>Basic features</span>
                   </div>
                 </CardContent>
@@ -242,7 +232,7 @@ export default function Pricing() {
               </Card>
               <Card className="p-6 grid gap-6">
                 <CardHeader>
-                  <CardTitle>Pro</CardTitle>
+                  <CardTitle>Professores</CardTitle>
                   <CardDescription>
                     <div className="flex items-baseline gap-2">
                       <span className="text-4xl font-bold">$19</span>
@@ -252,12 +242,15 @@ export default function Pricing() {
                 </CardHeader>
                 <CardContent className="grid gap-4">
                   <div className="flex items-center gap-2">
-                    <span>5 users</span>
+                  <Check/>
+                    <span>Extração de questões</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <span>50 GB storage</span>
+                  <Check/>
+                    <span>Gerenciar Revisões da sua matéria para alunos</span>
                   </div>
                   <div className="flex items-center gap-2">
+                  <Check/>
                     <span>Advanced features</span>
                   </div>
                 </CardContent>
@@ -270,7 +263,7 @@ export default function Pricing() {
               </Card>
               <Card className="p-6 grid gap-6">
                 <CardHeader>
-                  <CardTitle>Enterprise</CardTitle>
+                  <CardTitle>Instituições</CardTitle>
                   <CardDescription>
                     <div className="flex items-baseline gap-2">
                       <span className="text-4xl font-bold">$49</span>
@@ -280,12 +273,15 @@ export default function Pricing() {
                 </CardHeader>
                 <CardContent className="grid gap-4">
                   <div className="flex items-center gap-2">
+                  <Check/>
                     <span>Unlimited users</span>
                   </div>
                   <div className="flex items-center gap-2">
+                  <Check/>
                     <span>Unlimited storage</span>
                   </div>
                   <div className="flex items-center gap-2">
+                  <Check/>
                     <span>Enterprise features</span>
                   </div>
                 </CardContent>

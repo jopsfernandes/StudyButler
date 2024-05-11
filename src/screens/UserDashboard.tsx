@@ -43,7 +43,7 @@ import { Label } from '@/components/ui/label';
 export function UserDashboard() {
   return (
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
-      <div className="grid min-h-screen w-full md:grid-cols-[220px_1fr] lg:grid-cols-[280px_1fr] bg-zinc-100 dark:bg-zinc-900 dark:text-zinc-300 ">
+      <div className="grid min-h-screen w-full md:grid-cols-[220px_1fr] lg:grid-cols-[280px_1fr] bg-primary dark:bg-zinc-900 dark:text-zinc-300 ">
       <div className="hidden border-r dark:border-zinc-800 bg-muted md:block">
         <div className="flex h-full max-h-screen flex-col gap-2">
           <div className="flex h-14 items-center border-b dark:border-zinc-800 px-4 lg:h-[60px] lg:px-6">
@@ -58,11 +58,11 @@ export function UserDashboard() {
           </div>
           <div className="flex-1">
      <nav className="grid items-start px-2 text-sm font-medium lg:px-4">
-       <Link to="/dashboard"  className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary dark:hover:bg-zinc-800">
+       <Link to="/dashboard"  className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary dark:hover:bg-zinc-700">
          <Home className="h-5 w-5" />
          Dashboard
        </Link>
-       <Link to="/orders" className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary dark:hover:bg-zinc-800">
+       <Link to="/orders" className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all text-primary dark:hover:bg-zinc-700 dark:bg-zinc-800">
          <Backpack className="h-5 w-5 " />
          Minha Mochila
          <Badge className="ml-auto flex h-6 w-6 shrink-0 items-center justify-center rounded-full">
@@ -219,7 +219,7 @@ export function UserDashboard() {
             </DropdownMenuContent>
           </DropdownMenu>
         </header>
-        <main className="flex flex-1 flex-col gap-4 p-4 lg:gap-6 lg:p-6 dark:bg-zinc-950">
+        <main className="flex flex-1 flex-col gap-4 p-4 lg:gap-6 lg:p-6 dark:bg-zinc-900">
           <div className="flex items-center">
             <h1 className="text-lg font-semibold md:text-2xl">Cadernos</h1>
           </div>

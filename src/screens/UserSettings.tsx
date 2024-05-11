@@ -26,8 +26,8 @@ import { ThemeProvider } from '@/components/ui/theme-provider';
 export function UserSettings() {
   return (
      <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
-          <div className="flex min-h-screen w-full flex-col">
-      <header className="sticky top-0 flex h-16 items-center gap-4 border-b bg-background px-4 md:px-6">
+          <div className="flex dark:bg-zinc-900 dark:text-zinc-200 min-h-screen w-full flex-col">
+      <header className="sticky top-0 flex h-16 items-center gap-4  bg-background px-4 dark:bg-zinc-900 dark:text-zinc-200 md:px-6">
         <nav className="hidden flex-col gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6">
           <Link to="#"   className="flex items-center gap-2 text-lg font-semibold md:text-base" > <Package2 className="h-6 w-6" /> <span className="sr-only">StudyButler</span></Link>
           <Link to="/user-dashboard"  className="text-muted-foreground transition-colors hover:text-foreground" > Dashboard </Link>
@@ -72,7 +72,7 @@ export function UserSettings() {
                 <span className="sr-only">Toggle user menu</span>
               </Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent className="bg-white dark:bg-zinc-900 dark:text-white gap-2"align="end">
+            <DropdownMenuContent className="bg-primary dark:bg-zinc-900 dark:text-white gap-2"align="end">
               <DropdownMenuLabel>Minha Conta</DropdownMenuLabel>
               <DropdownMenuSeparator />
               <DropdownMenuItem>Configurações</DropdownMenuItem>
@@ -112,7 +112,7 @@ export function UserSettings() {
                   <Input placeholder="Store Name" />
                 </form>
               </CardContent>
-              <CardFooter className="border-t px-6 py-4">
+              <CardFooter className="px-6 py-4">
                 <Button>Salvar</Button>
               </CardFooter>
             </Card>
@@ -141,7 +141,7 @@ export function UserSettings() {
                   </div>
                 </form>
               </CardContent>
-              <CardFooter className="border-t px-6 py-4">
+              <CardFooter className=" px-6 py-4">
                 <Button>Salvar</Button>
               </CardFooter>
             </Card>
