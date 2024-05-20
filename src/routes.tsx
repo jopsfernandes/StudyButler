@@ -4,6 +4,7 @@ import { Dashboard } from './screens/Dashboard.tsx';
 import { UserDashboard } from './screens/UserDashboard.tsx';
 import {UserSettings} from './screens/UserSettings.tsx';
 import Pricing from './screens/Pricing.tsx';
+import { UserQuestionExtractor } from './screens/UserQuestionExtractor.tsx';
 
 
 
@@ -18,7 +19,7 @@ export const router = createHashRouter(
             <Route path="/pricing" element={<Pricing/>}/>
 
             <Route path="/user-dashboard" element={<UserDashboard />}/>
-
+            <Route path="/user-question-extractor" element={<UserQuestionExtractor/>}/>
             <Route path="/user-settings" element={<UserSettings />}/>
             <Route path="/pricing" element={<Pricing/>}/>
 

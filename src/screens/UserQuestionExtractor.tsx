@@ -14,8 +14,7 @@ import {
   ScanText,
   Calendar,
   GraduationCap,
-  LogOut,
-  Check,
+  LogOut
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -25,7 +24,6 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-  CardFooter,
 } from "@/components/ui/card";
 import {
   DropdownMenu,
@@ -42,7 +40,7 @@ import { ModeToggle } from '@/components/ui/mode-toggle';
 import { ThemeProvider } from '@/components/ui/theme-provider';
 import { Dialog, DialogContent, DialogTrigger, DialogHeader,DialogTitle, DialogFooter, DialogDescription,DialogClose } from '../components/ui/dialog'
 import { Label } from '@/components/ui/label';
-export default function Pricing() {
+export function UserQuestionExtractor() {
   return (
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
       <div className="grid min-h-screen w-full md:grid-cols-[220px_1fr] lg:grid-cols-[280px_1fr] bg-primary dark:bg-zinc-900 dark:text-zinc-300 ">
@@ -60,18 +58,18 @@ export default function Pricing() {
           </div>
           <div className="flex-1">
      <nav className="grid items-start px-2 text-sm font-medium lg:px-4">
-       <Link to="/dashboard"  className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary dark:hover:bg-zinc-800">
+       <Link to="/dashboard"  className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary dark:hover:bg-zinc-700">
          <Home className="h-5 w-5" />
          Dashboard
        </Link>
-       <Link to="/user-dashboard" className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary dark:hover:bg-zinc-800">
+       <Link to="/user-dashboard" className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all text-primary dark:hover:bg-zinc-700">
          <Backpack className="h-5 w-5 " />
          Minha Mochila
          <Badge className="ml-auto flex h-6 w-6 shrink-0 items-center justify-center rounded-full">
            6
          </Badge>
        </Link>
-       <Link to="/user-question-extractor" className="flex items-center gap-3 rounded-lg bg-muted px-3 py-2 text-primary transition-all hover:text-primary dark:hover:bg-zinc-800">
+       <Link to="/user-question-extractor" className="flex items-center gap-3 rounded-lg bg-muted px-3 py-2 text-primary transition-all hover:text-primary  dark:bg-zinc-800 dark:hover:bg-zinc-700">
          <ScanText className="h-5 w-5" />
          Extrair Questões {" "}
        </Link>
@@ -88,11 +86,28 @@ export default function Pricing() {
        </Link>
      </nav>
    </div>
-          
+          <div className="mt-auto p-4">
+            <Card>
+              <CardHeader className="p-2 pt-0 md:p-4">
+                <CardTitle>Mude para o StudyButler PRO</CardTitle>
+                <CardDescription>
+                  Desbloqueie todo o seu potencial acadêmico
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="p-2 pt-0 md:p-4 md:pt-0">
+                <Link to="/pricing">
+                <Button size="sm" className="w-full">
+                  Assinar
+                </Button>
+                </Link>
+              
+              </CardContent>
+            </Card>
+          </div>
         </div>
       </div>
       <div className="flex flex-col">
-        <header className="flex h-14 items-center gap-4 dark:border-zinc-800 bg-muted/40 px-4 lg:h-[60px] lg:px-6">
+        <header className="flex h-14 items-center gap-4 border-b dark:border-zinc-800 bg-muted/40 px-4 lg:h-[60px] lg:px-6">
           <Sheet>
             <SheetTrigger asChild>
               <Button
@@ -152,11 +167,34 @@ export default function Pricing() {
                   Analytics
                 </Link>
               </nav>
-              
+              <div className="mt-auto">
+                <Card>
+                  <CardHeader>
+                    <CardTitle>Venha ser Premium</CardTitle>
+                    <CardDescription>
+                      Desbloqueie todo o seu potencial acadêmico com a nossa coletânea de funcionalidades exclusivas
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <Button size="sm" className="w-full">
+                      Quero ser Premium
+                    </Button>
+                  </CardContent>
+                </Card>
+              </div>
             </SheetContent>
           </Sheet>
           <div className="w-full flex-1">
-            
+            <form>
+              <div className="relative">
+                <Search className=" absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
+                <Input
+                  type="search"
+                  placeholder="Procurar na mochila..."
+                  className="w-full appearance-none bg-background pl-8 shadow-none md:w-2/3 lg:w-1/3"
+                />
+              </div>
+            </form>
           </div>
 
           <ModeToggle></ModeToggle>
@@ -181,111 +219,8 @@ export default function Pricing() {
             </DropdownMenuContent>
           </DropdownMenu>
         </header>
-        <main className="flex flex-1 flex-col gap-4 p-4 lg:gap-6 lg:p-6 dark:bg-zinc-920">
-        <div className="container grid gap-8 px-4 md:px-6">
-            <div className="grid gap-4 text-center justify-center">
-              <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">Planos que cabem no seu bolso!</h2>
-              <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-zinc-400">
-                Temos os melhores planos para atender todas as suas necessidades!
-              </p>
-            </div>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              <Card className="p-6 grid gap-6">
-                <CardHeader>
-                  <CardTitle>Estudantes</CardTitle>
-                  <CardDescription>
-                    <div className="flex items-baseline gap-2">
-                      <span className="text-4xl font-bold">$9</span>
-                      <span className="text-gray-500 dark:text-gray-400">/month</span>
-                    </div>
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="grid gap-4">
-                  <div className="flex items-center gap-2">
-                    <Check/>
-                    <span>Extração de questões</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                  <Check/>
-                    <span>Revisões Estratégicas</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                  <Check/>
-                    <span>Basic features</span>
-                  </div>
-                </CardContent>
-                <CardFooter className="flex items-center gap-2">
-                  <Button className="flex-1" variant="default">
-                    Get Started
-                  </Button>
-                  
-                </CardFooter>
-              </Card>
-              <Card className="p-6 grid gap-6">
-                <CardHeader>
-                  <CardTitle>Professores</CardTitle>
-                  <CardDescription>
-                    <div className="flex items-baseline gap-2">
-                      <span className="text-4xl font-bold">$19</span>
-                      <span className="text-gray-500 dark:text-gray-400">/month</span>
-                    </div>
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="grid gap-4">
-                  <div className="flex items-center gap-2">
-                  <Check/>
-                    <span>Extração de questões</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                  <Check/>
-                    <span>Gerenciar Revisões da sua matéria para alunos</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                  <Check/>
-                    <span>Advanced features</span>
-                  </div>
-                </CardContent>
-                <CardFooter className="flex items-center gap-2">
-                  <Button className="flex-1" variant="default">
-                    Get Started
-                  </Button>
-                  
-                </CardFooter>
-              </Card>
-              <Card className="p-6 grid gap-6">
-                <CardHeader>
-                  <CardTitle>Instituições</CardTitle>
-                  <CardDescription>
-                    <div className="flex items-baseline gap-2">
-                      <span className="text-4xl font-bold">$49</span>
-                      <span className="text-gray-500 dark:text-gray-400">/month</span>
-                    </div>
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="grid gap-4">
-                  <div className="flex items-center gap-2">
-                  <Check/>
-                    <span>Unlimited users</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                  <Check/>
-                    <span>Unlimited storage</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                  <Check/>
-                    <span>Enterprise features</span>
-                  </div>
-                </CardContent>
-                <CardFooter className="flex items-center gap-2">
-                  <Button className="flex-1" variant="default">
-                    Get Started
-                  </Button>
-                 
-                </CardFooter>
-              </Card>
-            </div>
-          </div>
-
+        <main className="flex flex-1 flex-col gap-4 p-4 lg:gap-6 lg:p-6 dark:bg-zinc-900">
+          
         </main>
       </div>
     </div>
