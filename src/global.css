@@ -61,4 +61,8 @@
   input{
     -webkit-app-region:no-drag;
   }
+
+  nav{
+    -webkit-app-region:no-drag;
+  }
 }

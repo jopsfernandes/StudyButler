@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { CircleUser, Menu, Package2, Search, LogOut } from 'lucide-react';
+import { CircleUser, Menu, Package2, Search, LogOut, GraduationCap } from 'lucide-react';
 import { ModeToggle } from '@/components/ui/mode-toggle';
 import { Button } from '@/components/ui/button';
 import {
@@ -29,10 +29,10 @@ export function UserSettings() {
           <div className="flex dark:bg-zinc-900 dark:text-zinc-200 min-h-screen w-full flex-col">
       <header className="sticky top-0 flex h-16 items-center gap-4  bg-background px-4 dark:bg-zinc-900 dark:text-zinc-200 md:px-6">
         <nav className="hidden flex-col gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6">
-          <Link to="#"   className="flex items-center gap-2 text-lg font-semibold md:text-base" > <Package2 className="h-6 w-6" /> <span className="sr-only">StudyButler</span></Link>
-          <Link to="/user-dashboard"  className="text-muted-foreground transition-colors hover:text-foreground" > Dashboard </Link>
-          <Link to="#"  className="text-muted-foreground transition-colors hover:text-foreground" >Mochila</Link>
-          <Link to="#"  className="text-muted-foreground transition-colors hover:text-foreground" >Questões</Link>
+          <Link to="#"   className="flex items-center gap-2 text-lg font-semibold md:text-base" > <GraduationCap className="h-6 w-6" /> <span className="sr-only">StudyButler</span></Link>
+          <Link to="/dashboard"  className="text-muted-foreground transition-colors hover:text-foreground" > Dashboard </Link>
+          <Link to="/user-dashboard"  className="text-muted-foreground transition-colors hover:text-foreground" >Mochila</Link>
+          <Link to="/user-question-extractor"  className="text-muted-foreground transition-colors hover:text-foreground" >Questões</Link>
           <Link to="#"  className="text-muted-foreground transition-colors hover:text-foreground" >Calendário</Link>
           <Link to="#" className="text-foreground transition-colors hover:text-foreground" >Progresso</Link>
         </nav>
