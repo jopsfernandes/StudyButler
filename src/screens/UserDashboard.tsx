@@ -35,11 +35,12 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Input } from "@/components/ui/input";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { NavSidebar } from "@/components/study-butler-components/nav-sidebar.tsx";
+import { NavSidebar } from "@/components/studybutlercomponents/nav-sidebar.tsx";
 import { ModeToggle } from '@/components/ui/mode-toggle';
 import { ThemeProvider } from '@/components/ui/theme-provider';
-import { Dialog, DialogContent, DialogTrigger, DialogHeader,DialogTitle, DialogFooter, DialogDescription,DialogClose } from '../components/ui/dialog'
-import { Label } from '@/components/ui/label';
+import SubjectFormStudyButler from '@/components/studybutlercomponents/SubjectFormStudyButler.tsx'
+import { Toaster } from '@/components/ui/toaster';
+
 export function UserDashboard() {
   return (
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
@@ -231,42 +232,15 @@ export function UserDashboard() {
               <p className="text-sm text-muted-foreground">
                 Aperte no botão para criar um agora mesmo!!!
               </p>
-
-              <Dialog>
-                <DialogTrigger asChild>
-                <Button className="mt-4">Criar novo caderno</Button>
-                </DialogTrigger>
-                <DialogContent>
-                  <DialogHeader className='mb-3'>
-                    <DialogTitle className='dark:text-zinc-300'>
-                     Criação de caderno
-                    </DialogTitle>
-                    <DialogDescription>preencha os campos para criar seu caderno.</DialogDescription>
-                  </DialogHeader>
-                  <form action="" className='space-y-4'>
-                    <div className='grid grid-cols-4 items-center text-right gap-4'>
-                      <Label className='dark:text-zinc-200' htmlFor='subject-name'>Nome</Label>
-                      <Input className='col-span-3 dark:text-zinc-200' id="subject-name"></Input>
-                    </div>
-                    <div className='grid grid-cols-4 items-center text-right gap-4'>
-                      <Label className='dark:text-zinc-200' htmlFor='subject-name'>Dificuldade</Label>
-                      <Input className='col-span-3 dark:text-zinc-200' id="subject-name"></Input>
-                    </div>
-                    <div className='grid grid-cols-4 items-center text-right gap-4'>
-                      <Label className='dark:text-zinc-200' htmlFor='subject-name'>Matéria</Label>
-                      <Input className='col-span-3 dark:text-zinc-200' id="subject-name"></Input>
-                    </div>
-                    <DialogFooter className="">
-                      <DialogClose asChild><Button className="dark:text-zinc-200" variant={'outline'}>Cancelar</Button></DialogClose>
-                      <Button>Criar Caderno</Button>
-                    </DialogFooter>
-                  </form>
-                </DialogContent>
-              </Dialog>
+              <SubjectFormStudyButler/> 
+              
 
             </div>
           </div>
+          <Toaster/>
         </main>
+
+      
       </div>
     </div>
     </ThemeProvider>
