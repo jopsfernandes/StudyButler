@@ -13,9 +13,43 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model User{
-  id        Int     @id @default(autoincrement())
-  name      String
-  email     String
-  password  String
+model User {
+  id       Int    @id @default(autoincrement())
+  name     String
+  email    String
+  password String
+}
+
+model Caderno {
+  id        Int       @id @default(autoincrement())
+  nome      String
+  descricao String?
+  materias  Materia[]
+}
+
+model Materia {
+  id         Int      @id @default(autoincrement())
+  nome       String
+  descricao  String?
+  topicos    Topico[]
+  caderno_id Int
+  caderno    Caderno  @relation(fields: [caderno_id], references: [id])
+}
+
+model Topico {
+  id         Int       @id @default(autoincrement())
+  nome       String
+  descricao  String?
+  materia_id Int
+  materia    Materia   @relation(fields: [materia_id], references: [id])
+  questoes   Questao[]
+}
+
+model Questao {
+  id                Int    @id @default(autoincrement())
+  enunciado         String
+  resposta_correta  String
+  nivel_dificuldade Int
+  topico_id         Int
+  topico            Topico @relation(fields: [topico_id], references: [id])
 }

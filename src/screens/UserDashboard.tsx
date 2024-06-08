@@ -64,7 +64,7 @@ export function UserDashboard() {
          <Home className="h-5 w-5" />
          Dashboard
        </Link>
-       <Link to="/orders" className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all text-primary dark:hover:bg-zinc-700 dark:bg-zinc-800">
+       <Link to="/user-dashboard" className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all text-primary dark:hover:bg-zinc-700 dark:bg-zinc-800">
          <Backpack className="h-5 w-5 " />
          Minha Mochila
          <Badge className="ml-auto flex h-6 w-6 shrink-0 items-center justify-center rounded-full">
@@ -98,7 +98,7 @@ export function UserDashboard() {
               </CardHeader>
               <CardContent className="p-2 pt-0 md:p-4 md:pt-0">
                 <Link to="/pricing">
-                <Button size="sm" className="w-full">
+                <Button size="sm" className="w-full transition ease-in-out hover:-translate-y-0.5 hover:scale-105 duration-300 ">
                   Assinar
                 </Button>
                 </Link>
@@ -189,12 +189,13 @@ export function UserDashboard() {
           <div className="w-full flex-1">
             <form>
               <div className="relative">
-                <Search className=" absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
+                
                 <Input
                   type="search"
                   placeholder="Procurar na mochila..."
-                  className="w-full appearance-none bg-background pl-8 shadow-none md:w-2/3 lg:w-1/3"
+                  className="w-full appearance-none bg-background  shadow-none md:w-3/4 lg:w-1/4"
                 />
+                <Search className="absolute left-40 top-3 h-4 w-4 text-muted-foreground" />
               </div>
             </form>
           </div>
