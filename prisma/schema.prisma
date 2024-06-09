@@ -18,6 +18,7 @@ model User {
   name     String
   email    String
   password String
+  cadernos Caderno[]
 }
 
 model Caderno {
@@ -25,6 +26,8 @@ model Caderno {
   nome      String
   descricao String?
   materias  Materia[]
+  user_id Int
+  user User @relation(fields: [user_id],  references: [id])
 }
 
 model Materia {
