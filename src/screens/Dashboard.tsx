@@ -7,7 +7,7 @@ import { Search, PlusCircle, CircleCheck } from 'lucide-react'
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '../components/ui/table'
 import { DialogClose, DialogDescription, DialogTitle } from '@radix-ui/react-dialog'
 import { ThemeProvider } from '../components/ui/theme-provider'
-import { SelectGroup, SelectContent, SelectTrigger, Select, SelectValue, SelectItem } from '@/components/ui/select'
+import { SelectContent, SelectTrigger, Select, SelectValue, SelectItem } from '@/components/ui/select'
 import classNames from "classnames"
 
 

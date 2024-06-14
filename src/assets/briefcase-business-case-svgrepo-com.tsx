@@ -1,6 +1,5 @@
-import * as React from "react"
 
-function BusinessCase(props) {
+function BusinessCase(props:any) {
   return (
     <svg
       width="250px"

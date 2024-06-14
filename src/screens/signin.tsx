@@ -5,10 +5,7 @@ import { Label } from "@/components/ui/label";
 import { ModeToggle } from "@/components/ui/mode-toggle";
 import { Separator } from "@/components/ui/separator";
 import { ThemeProvider } from "@/components/ui/theme-provider";
-import { useEffect } from "react";
-import { Link, Navigate } from "react-router-dom";
-import { Dashboard } from "./Dashboard";
-import React, {useState} from 'react'
+import { Link } from "react-router-dom";
 
 
 

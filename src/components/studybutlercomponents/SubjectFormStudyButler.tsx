@@ -1,6 +1,4 @@
-import * as React from 'react';
 
-import { useState } from 'react';
 import {
   Dialog,
   DialogContent,
@@ -12,20 +10,10 @@ import {
   DialogClose
 } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
-import { Label } from '@/components/ui/label';
 import { Input } from "@/components/ui/input";
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
-import {format} from "date-fns"
-import {Calendar as CalendarIcon} from "lucide-react"
-import { cn} from '@/lib/utils';
-import {Calendar} from "@/components/ui/calendar"
-import{
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover"
 import {DatePicker} from "@/components/studybutlercomponents/datepicker"
 
 import {
@@ -67,7 +55,7 @@ export default function SubjectFormStudyButler() {
 
   // 
 
-  function onSubmit(data: z.infer<typeof FormSchema>) {
+  function onSubmit() {
     toast({
       title: "formulário enviado com sucesso!!",
      

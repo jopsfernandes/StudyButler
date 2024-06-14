@@ -23,6 +23,8 @@
     "@radix-ui/react-separator": "^1.0.3",
     "@radix-ui/react-slot": "^1.0.2",
     "@radix-ui/react-toast": "^1.1.5",
+    "@sentry/electron": "^5.1.0",
+    "@sentry/vite-plugin": "^2.18.0",
     "@types/react-router": "^5.1.20",
     "class-variance-authority": "^0.7.0",
     "classnames": "^2.5.1",

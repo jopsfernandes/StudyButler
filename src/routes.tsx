@@ -1,4 +1,4 @@
-import { createHashRouter, createRoutesFromElements, Route } from 'react-router-dom'
+import { createBrowserRouter, createRoutesFromElements, Route } from 'react-router-dom'
 import { SignIn } from './screens/signin.tsx';
 import { Dashboard } from './screens/Dashboard.tsx';
 import { UserDashboard } from './screens/UserDashboard.tsx';
@@ -9,7 +9,7 @@ import { UserQuestionExtractor } from './screens/UserQuestionExtractor.tsx';
 
 
 
-export const router = createHashRouter(
+export const router = createBrowserRouter(
     createRoutesFromElements(
         <>
             <Route path="/" element={<SignIn />}/>

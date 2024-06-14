@@ -35,11 +35,8 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Input } from "@/components/ui/input";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { NavSidebar } from "@/components/study-butler-components/nav-sidebar.tsx";
 import { ModeToggle } from '@/components/ui/mode-toggle';
 import { ThemeProvider } from '@/components/ui/theme-provider';
-import { Dialog, DialogContent, DialogTrigger, DialogHeader,DialogTitle, DialogFooter, DialogDescription,DialogClose } from '../components/ui/dialog'
-import { Label } from '@/components/ui/label';
 export function UserQuestionExtractor() {
   return (
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">

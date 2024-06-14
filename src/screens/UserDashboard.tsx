@@ -35,7 +35,6 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Input } from "@/components/ui/input";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { NavSidebar } from "@/components/studybutlercomponents/nav-sidebar.tsx";
 import { ModeToggle } from '@/components/ui/mode-toggle';
 import { ThemeProvider } from '@/components/ui/theme-provider';
 import SubjectFormStudyButler from '@/components/studybutlercomponents/SubjectFormStudyButler.tsx'
