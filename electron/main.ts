@@ -1,11 +1,6 @@
 import { app, BrowserWindow } from 'electron';
 import path from 'node:path';
-import * as Sentry from "@sentry/electron/main";
 
-
-Sentry.init({
-  dsn: "https://f914a532d0e12a975052047eda2f41a3@o4507428632068096.ingest.us.sentry.io/4507428635213824",
-});
 
 process.env.VITE_DEV_SERVER_URL = 'http://localhost:5173'
 process.env.DIST = path.join(__dirname, '../dist');
@@ -51,5 +46,4 @@ function createWindow() {
 app.on('window-all-closed', () => {
   win = null;
 });
-
 app.whenReady().then(createWindow);

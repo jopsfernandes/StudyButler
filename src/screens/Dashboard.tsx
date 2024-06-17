@@ -18,8 +18,8 @@ export function Dashboard() {
   return (
 
     <ThemeProvider defaultTheme='light' storageKey='vite-ui-theme' >
-      <div className='h-screen w-screen dark:bg-zinc-900'>
-        <div className='p-6 max-w-4xl mx-auto space-y-4 dark:bg-zinc-900'>
+      <div className=' dark:bg-zinc-900'>
+        <div className='p-1 max-w-3xl mx-auto space-y-4 dark:bg-zinc-900'>
 
           <div className='flex items-center justify-between'>
             <form className='flex items-center gap-2'>

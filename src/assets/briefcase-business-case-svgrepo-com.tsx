@@ -1,5 +1,5 @@
 
-function BusinessCase(props:any) {
+function BusinessCase(props:Props) {
   return (
     <svg
       width="250px"

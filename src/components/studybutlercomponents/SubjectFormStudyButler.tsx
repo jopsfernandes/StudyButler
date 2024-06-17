@@ -117,8 +117,8 @@ export default function SubjectFormStudyButler() {
         
       
       <DialogFooter className='w-full flex justify-end'>
-      <DialogClose className='' asChild><Button className="dark:text-zinc-200" variant={'outline'}>Cancelar</Button></DialogClose>
-      <DialogClose className=''asChild><Button className="transition ease-in-out hover:-translate-y-0.5 hover:scale-110 duration-300" type="submit">Criar caderno</Button></DialogClose>
+      <DialogClose className='' asChild><Button className="dark:text-zinc-200 transition ease-in-out hover:-translate-y-0.5 hover:scale-110 duration-300" variant={'outline'}>Cancelar</Button></DialogClose>
+      <DialogClose className=''asChild><Button className="transition ease-in-out hover:-translate-y-0.5 hover:scale-110 hover:ml-15 duration-300" type="submit">Criar caderno</Button></DialogClose>
       
       </DialogFooter>
       </form>
