@@ -10,7 +10,7 @@ function BusinessCase(props:Props) {
       xmlns="http://www.w3.org/2000/svg"
       {...props}
     >
-      <style>{".st0{fill:#6A8D73}.st2{fill:none}"}</style>
+      <style>{".st0{fill:#059669}.st2{fill:none}"}</style>
       <g id="fill">
         <path
           className="st0"
@@ -22,7 +22,7 @@ function BusinessCase(props:Props) {
         />
         <path
           d="M62.7 52c0-1.2-.1-2.5-.5-3.7-1.3-4-5-6.7-9.1-6.7-4 .1-7.4 2.8-8.3 6.7-.7 1.2-1.2 2.5-1.2 3.9.1 3.1 1.4 6 3.8 8 .5.6 1 1.1 1.6 1.5.6.4 1.4.6 2.2.5.6.2 1.2.2 1.8.3 1.2.5 2.5.6 3.7.2 2.7-.9 4.8-2.8 5.9-5.4.6-1.6.7-3.5.1-5.3z"
-          fill="#d9ae2b"
+          fill="#86F76F"
         />
       </g>
       <g id="line_copy">

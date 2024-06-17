@@ -83,7 +83,7 @@ export function Dashboard() {
             </Dialog>
 
           </div>
-          <div className='border rounded-lg '>
+          <div className='border dark:border-zinc-800 rounded-lg'>
             <Table>
               <TableHeader>
                 <TableHead>Tópicos</TableHead>
@@ -104,8 +104,8 @@ export function Dashboard() {
                     key={i}>
 
                       <TableCell>Tópico {i}</TableCell>
-                      <TableCell className=''>  <CircleCheck color='green' strokeWidth={3} className='w-6 h-6 mr-5 ml-4' /> </TableCell>
-                      <TableCell><Progress value={44}/></TableCell>
+                      <TableCell className=''><CircleCheck color='#059669' strokeWidth={3} className='w-6 h-6 mr-5 ml-4' /> </TableCell>
+                      <TableCell><Progress value={40}/> </TableCell>
                     </TableRow>
                   )
                 })}
