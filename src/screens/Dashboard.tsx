@@ -85,7 +85,7 @@ export function Dashboard() {
           </div>
           <div className='border dark:border-zinc-800 rounded-lg'>
             <Table>
-              <TableHeader>
+              <TableHeader className='select-none'>
                 <TableHead>Tópicos</TableHead>
 
                 <TableHead>Dificuldade</TableHead>
@@ -95,7 +95,7 @@ export function Dashboard() {
               </TableHeader>
               <TableBody>
                 {Array.from({ length: 10 }).map((_, i) => {
-                   const rowClasses = classNames('dark:text-zinc-200 border-none', {
+                   const rowClasses = classNames('dark:text-zinc-200 border-none select-none', {
                     'dark:bg-zinc-950': i % 2 === 0
                   }, {'bg-zinc-100': i % 2 === 0});
 

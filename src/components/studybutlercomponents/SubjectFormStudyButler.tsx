@@ -74,7 +74,7 @@ export default function SubjectFormStudyButler() {
         <Button className="transition ease-in-out hover:scale-110 duration-300 mt-4">Criar novo caderno</Button>
       </DialogTrigger>
       <DialogContent className='w-full'>
-         <DialogHeader className='mb-3'>
+         <DialogHeader className='mb-3 select-none'>
           <DialogTitle className='dark:text-zinc-300'>Criação de caderno</DialogTitle>
           <DialogDescription>preencha os campos para criar seu caderno.</DialogDescription>
         </DialogHeader>
@@ -88,7 +88,7 @@ export default function SubjectFormStudyButler() {
           name="subject"
           render={({ field }) => (
             <FormItem className='w-2/3'>
-              <FormLabel className='dark:text-zinc-200 '>Matéria</FormLabel>
+              <FormLabel className='dark:text-zinc-200 select-none'>Matéria</FormLabel>
               <FormControl>
                 <Input className="dark:text-zinc-200" placeholder="Matemática, Física..." {...field} />
               </FormControl>
@@ -103,7 +103,7 @@ export default function SubjectFormStudyButler() {
         name="dob"
         render={({field}) => (
           <FormItem className='w-2/3'>
-            <FormLabel className='dark:text-zinc-200'>Data da prova</FormLabel>
+            <FormLabel className='dark:text-zinc-200 select-none'>Data da prova</FormLabel>
             <FormControl>
                 <DatePicker date={field.value} setDate={field.onChange} />
               </FormControl>
