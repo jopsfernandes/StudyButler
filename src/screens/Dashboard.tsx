@@ -9,7 +9,7 @@ import { DialogClose, DialogDescription, DialogTitle } from '@radix-ui/react-dia
 import { ThemeProvider } from '../components/ui/theme-provider'
 import { SelectContent, SelectTrigger, Select, SelectValue, SelectItem } from '@/components/ui/select'
 import classNames from "classnames"
-
+import { Progress } from '@/components/ui/progress'
 
 
 export function Dashboard() {
@@ -90,6 +90,8 @@ export function Dashboard() {
 
                 <TableHead>Dificuldade</TableHead>
 
+                <TableHead>Progresso</TableHead>
+
               </TableHeader>
               <TableBody>
                 {Array.from({ length: 10 }).map((_, i) => {
@@ -103,7 +105,7 @@ export function Dashboard() {
 
                       <TableCell>Tópico {i}</TableCell>
                       <TableCell className=''>  <CircleCheck color='green' strokeWidth={3} className='w-6 h-6 mr-5 ml-4' /> </TableCell>
-
+                      <TableCell><Progress value={44}/></TableCell>
                     </TableRow>
                   )
                 })}
