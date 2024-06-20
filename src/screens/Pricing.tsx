@@ -1,22 +1,6 @@
-import { Link } from "react-router-dom";
 import {
-  Bell,
-  CircleUser,
-  Home,
-  LineChart,
-  Menu,
-  Package,
-  Package2,
-  ShoppingCart,
-  Users,
-  Backpack,
-  ScanText,
-  Calendar,
-  GraduationCap,
-  LogOut,
-  Check,
+  Check
 } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -26,17 +10,7 @@ import {
   CardTitle,
   CardFooter,
 } from "@/components/ui/card";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { ModeToggle } from '@/components/ui/mode-toggle';
-import { ThemeProvider } from '@/components/ui/theme-provider';
+
 export default function Pricing() {
   return (
         <>

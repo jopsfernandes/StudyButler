@@ -1,3 +1,8 @@
+interface Props extends React.SVGProps<SVGSVGElement>{
+  width?: string;
+  height?: string;
+}
+
 
 function BusinessCase(props:Props) {
   return (

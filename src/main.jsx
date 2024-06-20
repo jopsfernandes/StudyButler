@@ -7,7 +7,7 @@ import React from 'react'
 import { ThemeProvider } from './components/ui/theme-provider.tsx'
 import { DraggableTopBar } from '@/components/studybutlercomponents/DraggableTopBar.tsx'
 
-ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
+ReactDOM.createRoot(document.getElementById('root')).render(
     <>
     <DraggableTopBar/>
     <ThemeProvider defaultTheme='system' storageKey='vite-ui-theme'><React.StrictMode>

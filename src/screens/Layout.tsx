@@ -7,7 +7,6 @@ import {
   Menu,
   Package,
   Package2,
-  Search,
   ShoppingCart,
   Users,
   Backpack,
@@ -33,13 +32,10 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Input } from "@/components/ui/input";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { ModeToggle } from '@/components/ui/mode-toggle';
 import { ThemeProvider } from '@/components/ui/theme-provider';
-import SubjectFormStudyButler from '@/components/studybutlercomponents/SubjectFormStudyButler.tsx'
 import { Toaster } from '@/components/ui/toaster';
-import BusinessCase from '@/assets/briefcase-business-case-svgrepo-com.js';
 import {Outlet} from "react-router-dom"
 
 export function Layout() {
